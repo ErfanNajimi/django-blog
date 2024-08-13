@@ -6,7 +6,7 @@ def about_detail(request):
     """
     Display the latest 'About content
     """
-    queryset = About.objects.first()
+    queryset = About.objects.all().order_by('-updated_on').first()
     about = queryset
 
     return render(
